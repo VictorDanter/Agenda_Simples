@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL - Agenda Rapida</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body class="background_agenda">
+
+    <div id="conteudo">
+        <div class="agenda_list">
+            <h1>Lista de Agendamentos <span class="material-symbols-outlined btn_agendar">
+                calendar_today
+                </span></h1>
+            <ul>
+                <li class="primeiroitem">
+                    <strong>Status: Agendado</strong> | Data: 01/01/2024 | <strong>horario: 15:30h</strong> | Descrição: Andar <div><span class="material-symbols-outlined">check</span> <span class="material-symbols-outlined btn1-colorirvermelho">warning</span> <span class="material-symbols-outlined">delete_forever</span></div>
+                </li>
+                <li class="segundoitem">
+                    <strong>Status: Agendado</strong> | Data: 23/02/2024 | <strong>horario: 14:33h</strong> | Descrição: Programar <div><span class="material-symbols-outlined">check</span> <span class="material-symbols-outlined btn2-colorirvermelho">warning</span> <span class="material-symbols-outlined">delete_forever</span></div>
+                </li>
+                <li class="terceiroitem">
+                    <strong>Status: Agendado</strong> | Data: 04/03/2024 | <strong>horario: 15:54h</strong> | Descrição: Desenvolver Site <div><span class="material-symbols-outlined">check</span> <span class="material-symbols-outlined btn3-colorirvermelho">warning</span> <span class="material-symbols-outlined">delete_forever</span></div>
+                </li>
+                <li class="quartoitem">
+                    <strong>Status: Agendado</strong> | Data: 07/05/2024 | <strong>horario: 11:23h</strong> | Descrição: Jogar <div><span class="material-symbols-outlined">check</span> <span class="material-symbols-outlined btn4-colorirvermelho">warning</span> <span class="material-symbols-outlined">delete_forever</span></div>
+                </li>
+                <!-- lista de agendamentos aqui -->
+            </ul>
+            
+        </div>
+    
+        <!-- inserir o overlay aqui -->
+        <div class="overlay"></div>
+        <div class="agenda_rap">
+            <h1><span class="material-symbols-outlined">
+                calendar_month
+                </span> Agendar <span class="material-symbols-outlined btn_agendar_fechar">
+                    close
+                    </span></h1>
+                <hr>
+            <form method="post" action="/add_agendamento">
+                <select name="status_agend" id="status_agend" class="status_agend">
+                    <option value="status-1">Agendado</option>
+                    <option value="status-2">Pedente</option>
+                    <option value="status-3">Finalizado</option>
+                </select><br>
+    
+                <input type="text" name="desc_agend" id="desc_agend" placeholder="Descrição do compromisso" required><br>
+    
+                <label for="data_agend"><span class="material-symbols-outlined">
+                    calendar_month
+                    </span> Data</label>
+                <input type="date" name="data_agend" id="data_agend" required><br>
+    
+                <label for="horario_agend"><span class="material-symbols-outlined">
+                    schedule
+                    </span> Horário</label>
+                <input type="time" name="horario_agend" id="horario_agend" required><br>
+                
+                <label for="cliente_agend"><span class="material-symbols-outlined">
+                    person
+                    </span> Cliente</label> 
+                    <select name="cliente_agend" id="cliente_agend" class="cliente_agend"></select>
+                <hr>
+                <h3>Endereço</h3>
+                <p>Adicione um endereço <span class="material-symbols-outlined">
+                    chevron_right
+                    </span></p>
+                <hr>
+                <div class="teste">
+                    <button type="submit" class="enviar_agendamento_bnt">Agendar</button>
+                </div>
+            </form>
+        </div>
+        <div class="endereco_agend">
+            <form method="post" action="/add_ender_agend">
+                <input type="text" name="rua_agend" id="rua agend" placeholder="Rua">
+                <input type="text" name="numero_agend" id="numero_agend" placeholder="Número"><br>
+                <input type="text" name="bairro_agend" id="bairro_agend" placeholder="Bairro">
+                <input type="text" name="cep_agend" id="agend" placeholder="CEP"><br>
+    
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
